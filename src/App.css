@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+:root {
+  --dark_color: #192A51;
+  --light_color: #D7BBA8;
+  --text_color: #e0f2fe;
+  /* --dark_color: #242424;
+  --light_color: #e7e7e7;
+  --text_color: #e0f2fe; */
+}
+
+body {
+  background-color: var(--dark_color);
+  color: var(--text_color);
+}
+
+.pages {
+  margin: 0 10rem;
+}
