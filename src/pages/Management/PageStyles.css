@@ -17,7 +17,7 @@
 .list_item {
   display: flex;
   flex-direction: column;
-  background-color: #93c5fd;
+  background-color: var(--bg1);
   /* align-items: center; */
   /* background-color: #f4f9e9; */
   /* background-color: #5aa9e6; */
@@ -67,6 +67,7 @@ ul {
   display: flex;
   gap: 0.4rem;
   align-items: center;
+  cursor: pointer;
 }
 .add_icon {
   font-size: 1.2rem;
@@ -85,4 +86,15 @@ ul {
   display: flex;
   align-items: center;
   gap: 3rem;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
 }

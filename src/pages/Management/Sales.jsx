@@ -10,7 +10,7 @@ const Sales = () => {
         {sales.map((item) => (
           <li
             className="list_item items "
-            key={item.key}
+            key={item._id}
             style={{ backgroundColor: "#A7ABDD" }}
           >
             <div>{item.description}</div>

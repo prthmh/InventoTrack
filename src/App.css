@@ -3,9 +3,10 @@ body {
 }
 
 :root {
-  --dark_color: #192A51;
-  --light_color: #D7BBA8;
+  --dark_color: #192a51;
+  --light_color: #d7bba8;
   --text_color: #e0f2fe;
+  --bg1: #93c5fd;
   /* --dark_color: #242424;
   --light_color: #e7e7e7;
   --text_color: #e0f2fe; */

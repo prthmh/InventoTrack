@@ -1,6 +1,9 @@
+import toast from "react-hot-toast";
 import {
   ADD_INVENTORY,
+  ADD_SALES,
   DELETE_INVENTORY,
+  EDIT_INVENTORY,
   FETCH_INVENTORY,
   FETCH_SALES,
   INVENTORY_ACTION_FAILURE,
@@ -53,12 +56,33 @@ export const addItemInInventory = (newItem) => async (dispatch) => {
     if (response.status === 201) {
       const data = await response.json();
       dispatch({ type: ADD_INVENTORY, payload: data.newItem });
+      toast.success("Item added successfully");
     }
   } catch (error) {
     console.error("Error in adding item in inventory", error);
     dispatch({
       type: INVENTORY_ACTION_FAILURE,
       payload: "Error in adding item in inventory",
+    });
+  }
+};
+
+export const addSalesItem = (newItem) => async (dispatch) => {
+  try {
+    const response = await fetch(`${API_URL}/api/sales`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newItem),
+    });
+    if (response.status === 201) {
+      const data = await response.json();
+      dispatch({ type: ADD_SALES, payload: data.newSale });
+    }
+  } catch (error) {
+    console.error("Error in adding item in sales", error);
+    dispatch({
+      type: SALES_ACTION_FALIURE,
+      payload: "Error in adding item in sales",
     });
   }
 };
@@ -70,6 +94,7 @@ export const deleteItemInInventory = (itemId) => async (dispatch) => {
     });
     if (response.status === 204) {
       dispatch({ type: DELETE_INVENTORY, payload: itemId });
+      toast.success("Item deleted successfully");
     }
   } catch (error) {
     console.error("Error in deleteing item in inventory", error);
@@ -80,10 +105,22 @@ export const deleteItemInInventory = (itemId) => async (dispatch) => {
   }
 };
 
-// export const editItemInInventory = (itemId, updateData) => async(dispatch) => {
-//     try{
-
-//     } catch(error){
-
-//     }
-// }
+export const editItemInInventory = (itemId, updateData) => async (dispatch) => {
+  try {
+    const response = await fetch(`${API_URL}/api/items/${itemId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updateData),
+    });
+    if (response.status === 200) {
+      const data = await response.json();
+      dispatch({ type: EDIT_INVENTORY, payload: data.updatedItem });
+    }
+  } catch (error) {
+    console.error("Error in updating item in inventory", error);
+    dispatch({
+      type: INVENTORY_ACTION_FAILURE,
+      payload: "Error in updating item in inventory",
+    });
+  }
+};

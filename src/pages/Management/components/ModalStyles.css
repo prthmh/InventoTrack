@@ -1,0 +1,40 @@
+.modal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.form_label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.from_input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0rem 0.5rem;
+  /* width: 90%; */
+  border: none;
+  border-radius: 0.5rem;
+  height: 1.9rem;
+  box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal_action_btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inventory_modal {
+  padding: 1rem;
+  background-color: var(--bg1);
+  border-radius: 0.9rem;
+  color: var(--dark_color);
+}
+
+.inventory_modal > h3 {
+  margin: 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--dark_color);
+}

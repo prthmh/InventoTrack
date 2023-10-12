@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchInventory, fetchSales } from "./redux/actions";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,16 @@ function App() {
 
   return (
     <div className="app">
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          className: "",
+          duration: 3000,
+          style: {
+            fontFamily: "inherit",
+          },
+        }}
+      />
       <NavBar />
       <div className="pages">
         <Routes>
