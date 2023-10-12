@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./ModalStyles.css";
 import { useDispatch } from "react-redux";
-import { addItemInInventory } from "../../../redux/actions";
+import {
+  addItemInInventory,
+  editItemInInventory,
+} from "../../../redux/actions";
 
 const initialState = {
   name: "",
@@ -10,10 +13,11 @@ const initialState = {
   category: "",
 };
 
-const InventoryModal = ({ setShowModal }) => {
+const InventoryModal = ({ setShowModal, editItem, setEditItem }) => {
   const dispatch = useDispatch();
-  const [itemData, setItemData] = useState(initialState);
+  const [itemData, setItemData] = useState(editItem ?? initialState);
   const { name, quantity, price, category } = itemData;
+  
   const toStopPropagation = (e) => {
     e.stopPropagation();
   };
@@ -26,15 +30,20 @@ const InventoryModal = ({ setShowModal }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(addItemInInventory(itemData));
+    if (editItem) {
+      dispatch(editItemInInventory(itemData._id, itemData));
+      setEditItem();
+    } else {
+      dispatch(addItemInInventory(itemData));
+    }
     setItemData(initialState);
     setShowModal(false);
   };
 
-  console.log(itemData);
+
   return (
     <div className="inventory_modal" onClick={toStopPropagation}>
-      <h3>Add Inventory</h3>
+      <h3>{editItem ? "Edit" : "Add"} Inventory</h3>
       <form className="modal_form" onSubmit={submitHandler}>
         <label className="form_label">Name</label>
         <input
@@ -69,8 +78,12 @@ const InventoryModal = ({ setShowModal }) => {
           onChange={inputHandler}
         />
         <div className="modal_action_btns">
-          <button type="submit">Add</button>
-          <button onClick={() => setShowModal(false)}>Cancel</button>
+          <button type="submit" className="save_btn">
+            {editItem ? "Save" : "Add"}
+          </button>
+          <button onClick={() => setShowModal(false)} className="cancel_btn">
+            Cancel
+          </button>
         </div>
       </form>
     </div>

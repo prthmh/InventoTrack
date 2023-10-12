@@ -1,17 +1,23 @@
-.inventory_items,
-.sales_items {
+.inventory_items {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .inventory_items {
-  margin: 0 15rem;
+  margin: 0 10rem;
 }
 
 .sales_items {
-  width: 30rem;
+  /* width: 30rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 0 10rem;
+}
+.sales_items > .list_item {
+  width: 8rem;
 }
 
 .list_item {
@@ -32,6 +38,7 @@
 .list_item > h2 {
   margin: 0;
   color: var(--dark_color);
+  align-self: center;
 }
 
 ul {
@@ -49,6 +56,7 @@ ul {
   padding: 0.3rem;
   border-radius: 0.3rem;
   font-size: 1.4rem;
+  transition: 0.2s ease-in;
 }
 
 .edit_btn {
@@ -57,7 +65,6 @@ ul {
 }
 .delete_btn {
   background-color: red;
-  /* color: var(--text_color); */
   color: #e7e7e7;
 }
 .add_item {
@@ -67,7 +74,9 @@ ul {
   display: flex;
   gap: 0.4rem;
   align-items: center;
-  cursor: pointer;
+  border: 2px solid var(--dark_color);
+  font-weight: 600;
+  transition: 0.3s ease-in;
 }
 .add_icon {
   font-size: 1.2rem;
@@ -78,8 +87,22 @@ ul {
 
 .edit_btn:hover,
 .delete_btn:hover {
-  opacity: 0.8;
   cursor: pointer;
+}
+.delete_btn:hover {
+  color: red;
+  background-color: #e7e7e7;
+}
+.edit_btn:hover {
+  color: var(--dark_color);
+  background-color: var(--light_color);
+}
+
+.add_item:hover {
+  cursor: pointer;
+  background-color: var(--dark_color);
+  color: var(--light_color);
+  border: 2px solid var(--light_color);
 }
 
 .page_header {

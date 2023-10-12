@@ -24,7 +24,7 @@ function App() {
         position="top-center"
         toastOptions={{
           className: "",
-          duration: 3000,
+          duration: 4000,
           style: {
             fontFamily: "inherit",
           },

@@ -11,9 +11,15 @@ const Inventory = () => {
   const dispatch = useDispatch();
   const inventory = useSelector((state) => state.inventory);
   const [showModal, setShowModal] = useState(false);
+  const [editItem, setEditItem] = useState();
 
   const deleteHandler = (itemId) => {
     dispatch(deleteItemInInventory(itemId));
+  };
+
+  const editHandler = (item) => {
+    setEditItem(item);
+    setShowModal(true);
   };
 
   console.log("inventory", inventory);
@@ -32,7 +38,7 @@ const Inventory = () => {
 
       <ul className="inventory_items">
         {inventory.map((item) => (
-          <li className="list_item items " key={item._id}>
+          <li className="list_item" key={item._id}>
             <h2>{item.name}</h2>
             <div>
               <b>Quantity: </b>
@@ -40,14 +46,18 @@ const Inventory = () => {
             </div>
             <div>
               <b>Price: </b>
-              {item.price}
+              ₹{item.price}
             </div>
             <div>
               <b>Category: </b>
               {item.category}
             </div>
             <div className="action_btns">
-              <div className="edit_btn" title="Edit item" >
+              <div
+                className="edit_btn"
+                title="Edit item"
+                onClick={() => editHandler(item)}
+              >
                 <MdModeEdit />
               </div>
               <div
@@ -63,7 +73,7 @@ const Inventory = () => {
       </ul>
       {showModal && (
         <div className="modal" onClick={() => setShowModal(false)}>
-          <InventoryModal setShowModal={setShowModal} />
+          <InventoryModal setShowModal={setShowModal} editItem={editItem} setEditItem={setEditItem} />
         </div>
       )}
     </div>

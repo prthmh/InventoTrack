@@ -26,15 +26,70 @@
   justify-content: space-evenly;
 }
 
-.inventory_modal {
+.inventory_modal,
+.sales_modal {
   padding: 1rem;
-  background-color: var(--bg1);
   border-radius: 0.9rem;
   color: var(--dark_color);
 }
 
-.inventory_modal > h3 {
+.inventory_modal {
+  background-color: var(--bg1);
+}
+
+.sales_modal {
+  background-color: var(--bg2);
+  width: 20rem;
+}
+
+.inventory_modal > h3,
+.sales_modal > h3 {
   margin: 0;
   padding-bottom: 0.4rem;
   border-bottom: 2px solid var(--dark_color);
+}
+
+.save_btn,
+.cancel_btn {
+  border: none;
+  font-family: inherit;
+  color: var(--text_color);
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.1s ease-in;
+}
+
+.save_btn {
+  background-color: var(--dark_color);
+  border: 3px solid var(--dark_color);
+}
+
+.cancel_btn {
+  background-color: red;
+  border: 3px solid red;
+}
+
+.save_btn:hover {
+  cursor: pointer;
+  color: var(--dark_color);
+  background-color: transparent;
+}
+
+.cancel_btn:hover {
+  cursor: pointer;
+  color: red;
+  background-color: transparent;
+}
+
+.check_inventory {
+  background-color: var(--dark_color);
+  color: var(--text_color);
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+.check_inventory:hover{
+    cursor: pointer;
 }

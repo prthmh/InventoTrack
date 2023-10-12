@@ -77,6 +77,7 @@ export const addSalesItem = (newItem) => async (dispatch) => {
     if (response.status === 201) {
       const data = await response.json();
       dispatch({ type: ADD_SALES, payload: data.newSale });
+      toast.success("Sale added successfully");
     }
   } catch (error) {
     console.error("Error in adding item in sales", error);
@@ -114,7 +115,11 @@ export const editItemInInventory = (itemId, updateData) => async (dispatch) => {
     });
     if (response.status === 200) {
       const data = await response.json();
-      dispatch({ type: EDIT_INVENTORY, payload: data.updatedItem });
+      dispatch({
+        type: EDIT_INVENTORY,
+        payload: { itemId: data.updatedItem._id, item: data.updatedItem },
+      });
+      toast.success("Item edited successfully.")
     }
   } catch (error) {
     console.error("Error in updating item in inventory", error);
