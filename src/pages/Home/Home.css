@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+.typewriter {
+  font-size: 6rem;
+  overflow: hidden;
+  border-right: 0.12em solid var(--light_color);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.12em;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--light_color);
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.link_element {
+  text-decoration: none;
+  color: var(--dark_color);
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.link_element:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}

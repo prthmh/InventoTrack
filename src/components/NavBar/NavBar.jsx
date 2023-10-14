@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { BsGithub } from "react-icons/bs";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -24,6 +25,15 @@ const NavBar = () => {
         <NavLink to="/report" className="nav_element" style={gettActiveStyles}>
           Report
         </NavLink>
+        <a
+          href="https://github.com/prthmh/InventoTrack"
+          className="github_link"
+          target="_blank"
+          rel="noreferrer"
+          title="GitHub Link of Project"
+        >
+          <BsGithub />
+        </a>
       </div>
     </div>
   );

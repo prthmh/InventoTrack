@@ -6,13 +6,14 @@
   margin: 2rem 10rem;
   border-radius: 0.8rem;
   padding: 1rem;
-  box-shadow: -4px 3px 29px 15px rgba(0,0,0,0.3);
+  box-shadow: -4px 3px 29px 15px rgba(0, 0, 0, 0.3);
 }
 
 .operation_pages {
   display: flex;
   justify-content: space-between;
-  gap: 6rem;
+  align-items: center;
+  gap: 4rem;
 }
 
 .nav_element {
@@ -31,4 +32,11 @@
 .nav_element:hover {
   border-bottom: 3px solid var(--dark_color);
   cursor: pointer;
+}
+
+.github_link {
+  text-decoration: none;
+  color: var(--dark_color);
+  font-size: 1.8rem;
+  margin-right: 1rem;
 }

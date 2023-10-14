@@ -1,0 +1,27 @@
+.item_report {
+    color: var(--dark_color);
+    padding: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: -4px 13px 25px 15px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+  }
+  
+  .report_table {
+    border: 2px solid var(--dark_color);
+    border-radius: 1rem;
+    border-spacing: 0;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  th,
+  td {
+    padding: 0.8rem;
+  }
+  
+  th {
+    border-bottom: 2px solid var(--dark_color);
+  }
+  

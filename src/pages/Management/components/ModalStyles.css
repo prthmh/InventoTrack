@@ -35,6 +35,7 @@
 
 .inventory_modal {
   background-color: var(--bg1);
+  width: 20rem;
 }
 
 .sales_modal {

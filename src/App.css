@@ -6,11 +6,11 @@ body {
   --dark_color: #192a51;
   --light_color: #d7bba8;
   --text_color: #e0f2fe;
-  --bg1: #93c5fd;
+  --bg1: #79addc;
   --bg2: #a7abdd;
-  /* --dark_color: #242424;
-  --light_color: #e7e7e7;
-  --text_color: #e0f2fe; */
+  --report_color1: #adf7b6;
+  --report_color2: #79addc;
+  --light_color3: #f7ece1;
 }
 
 body {
