@@ -10,7 +10,8 @@ import {
   SALES_ACTION_FALIURE,
 } from "./actionTypes";
 
-const API_URL = "https://inventory-management-api.pratmbr.repl.co";
+const API_URL =
+  "https://243e0fe1-21ee-40ce-becf-c3cbba85de7c-00-2wcd6c7vu5ikj.asia-b.replit.dev";
 
 export const fetchInventory = () => async (dispatch) => {
   try {
@@ -119,7 +120,7 @@ export const editItemInInventory = (itemId, updateData) => async (dispatch) => {
         type: EDIT_INVENTORY,
         payload: { itemId: data.updatedItem._id, item: data.updatedItem },
       });
-      toast.success("Item edited successfully.")
+      toast.success("Item edited successfully.");
     }
   } catch (error) {
     console.error("Error in updating item in inventory", error);
